@@ -136,3 +136,28 @@ dmypy.json
 
 # Cython debug symbols
 cython_debug/
+lib64
+pyvenv.cfg
+bin/activate
+bin/activate.csh
+bin/activate.fish
+bin/automat-visualize
+bin/autopep8
+bin/cftp
+bin/ckeygen
+bin/conch
+bin/easy_install
+bin/easy_install-3.7
+bin/mailmail
+bin/pip
+bin/pip3
+bin/pip3.7
+bin/pycodestyle
+bin/pyhtmlizer
+bin/python
+bin/python3
+bin/scrapy
+bin/tkconch
+bin/trial
+bin/twist
+bin/twistd
