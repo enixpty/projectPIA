@@ -20,14 +20,16 @@ class Cia(Spider):
 
         for link in urls :
             
-            yield response.follow(link,callback=self.parse_link)
+            yield response.follow(link,callback=self.parse_link, cb_kwargs={'url' : response.urljoin(link)})
 
     
-    def parse_link(self, response):
+    def parse_link(self, response, **kwargs):
         
+        link = kwargs['url'] 
         title = response.xpath('//h1[@class="documentFirstHeading"]/text()').get()
-        body  = response.xpath('//div[@class="field-item even"]/p/text()').getall()
+        body  = response.xpath('//div[@class="field-item even"]/p[not(@class)]/text()').get() # solo se quiere el primer parrafo para referenciar
 
         yield {'title' : title,
-                'body' : body
+                'body' : body,
+                'url'  : link
             }
